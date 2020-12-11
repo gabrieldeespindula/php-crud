@@ -32,7 +32,23 @@ include_once 'includes/message.php';
                     <td><?php echo $data['email'] ?></td>
                     <td><?php echo $data['age'] ?></td>
                     <td><a href="edit.php?id=<?php echo $data['id']; ?>" class="btn-floating orange"><i class="material-icons">edit</i></a></td>
-                    <td><a href="" class="btn-floating red"><i class="material-icons">delete</i></a></td>
+
+                    <td><a href="#modal<?php echo $data['id']; ?>" class="btn-floating red modal-trigger"><i class="material-icons">delete</i></a></td>
+
+                    <div id="modal<?php echo $data['id']; ?>" class="modal">
+                        <div class="modal-content">
+                            <h4>Oops!</h4>
+                            <p>Are you sure you want to delete this client?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <form action="phpaction/delete.php" method="POST">
+                                <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
+                                <button type="submit" name="btn-delete" class="btn red">Yes, delete</button>
+                                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancel</a>
+                            </form>
+                        </div>
+                    </div>
+
                 </tr>
                 <?php
                 endwhile;
