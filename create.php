@@ -1,4 +1,7 @@
 <?php
+// session
+session_start();
+// connection
 require_once 'dbconnect.php';
 
 if (isset($_POST['btn-register'])):
@@ -10,9 +13,11 @@ if (isset($_POST['btn-register'])):
     $sql = "INSERT INTO client (name, lastname, email, age) VALUES ('$name', '$lastname', '$email', '$age')";
 
     if (mysqli_query($connect, $sql)):
-        header('Location: index.php?success');
+        $_SESSION['msg'] = "Registered successfully";
+        header('Location: index.php');
     else: 
-        header('Location: index.php?error');
+        $_SESSION['msg'] = "Registration error";
+        header('Location: index.php');
     endif;
 
 endif;

@@ -3,6 +3,8 @@
 include_once 'dbconnect.php';
 // header
 include_once "includes/header.php";
+// message
+include_once 'includes/message.php';
 ?>
 
 <div class="row">
