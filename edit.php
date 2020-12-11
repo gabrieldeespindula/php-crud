@@ -1,12 +1,14 @@
 <?php
+//connection
+include_once 'phpaction/dbconnect.php';
 // header
 include_once "includes/header.php";
 ?>
 
 <div class="row">
     <div class="col s12 m6 push-m3">
-        <h3 class="light">New Client</h3>
-        <form action="phpaction/create.php" method="POST">
+        <h3 class="light">Edit Client</h3>
+        <form action="phpaction/update.php" method="POST">
             <div class="input-field col s12">
                 <input type="text" name="name" id="name">
                 <label for="name">Name</label>

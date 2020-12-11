@@ -14,10 +14,10 @@ if (isset($_POST['btn-register'])):
 
     if (mysqli_query($connect, $sql)):
         $_SESSION['msg'] = "Registered successfully";
-        header('Location: index.php');
+        header('Location: ../index.php');
     else: 
         $_SESSION['msg'] = "Registration error";
-        header('Location: index.php');
+        header('Location: ../index.php');
     endif;
 
 endif;
