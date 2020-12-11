@@ -17,24 +17,25 @@ endif;
     <div class="col s12 m6 push-m3">
         <h3 class="light">Edit Client</h3>
         <form action="phpaction/update.php" method="POST">
+            <INPUT type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
             <div class="input-field col s12">
-                <input type="text" name="name" id="name" value="<?php echo $data['name'] ?>">
+                <input type="text" name="name" id="name" value="<?php echo $data['name']; ?>">
                 <label for="name">Name</label>
             </div>
             <div class="input-field col s12">
-                <input type="text" name="lastname" id="lastname" value="<?php echo $data['lastname'] ?>">
+                <input type="text" name="lastname" id="lastname" value="<?php echo $data['lastname']; ?>">
                 <label for="lastname">Last name</label>
             </div>
             <div class="input-field col s12">
-                <input type="text" name="email" id="email" value="<?php echo $data['email'] ?>">
+                <input type="text" name="email" id="email" value="<?php echo $data['email']; ?>">
                 <label for="email">Email</label>
             </div>
             <div class="input-field col s12">
-                <input type="text" name="age" id="age" value="<?php echo $data['age'] ?>">
+                <input type="text" name="age" id="age" value="<?php echo $data['age']; ?>">
                 <label for="age">Age</label>
             </div>
 
-            <button type="submit" name="btn-register" class="btn"> Update </button>
+            <button type="submit" name="btn-edit" class="btn"> Update </button>
             <a href="index.php" class="btn green"> Client List </a>
         </form>
     </div>
