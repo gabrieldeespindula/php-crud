@@ -3,12 +3,21 @@
 session_start();
 // connection
 require_once 'dbconnect.php';
+// clear
+function clear($input){
+    global $connect;
+    // sql
+    $var = mysqli_escape_string($connect, $input);
+    // xss
+    $var = htmlspecialchars($var);
+    return $var;
+}
 
 if (isset($_POST['btn-register'])):
-    $name = mysqli_escape_string($connect, $_POST['name']);
-    $lastname = mysqli_escape_string($connect, $_POST['lastname']);
-    $email = mysqli_escape_string($connect, $_POST['email']);
-    $age = mysqli_escape_string($connect, $_POST['age']);
+    $name = clear($_POST['name']);
+    $lastname = clear($_POST['lastname']);
+    $email = clear($_POST['email']);
+    $age = clear($_POST['age']);
 
     $sql = "INSERT INTO client (name, lastname, email, age) VALUES ('$name', '$lastname', '$email', '$age')";
 
